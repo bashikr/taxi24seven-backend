@@ -1,4 +1,4 @@
-package com.Taxi24Seven.Taxi24Seven.routes;
+package com.Taxi24Seven.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,10 +1,21 @@
-package com.Taxi24Seven.Taxi24Seven.db;
+package com.Taxi24Seven.DB;
 
-import java.lang.reflect.Constructor;
-import java.sql.Date;
 import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-public class User {
+@Entity
+@Table(name = "users")
+public class UserDB {
+    @Id
+    @SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "user_seq")
+
     private Long id;
     private String firstName;
     private String lastName;
@@ -15,10 +26,12 @@ public class User {
     private String role;
     private LocalDate joinDate;
 
-    public User() {
+    public UserDB() {
     }
 
-    public User(Long id, String firstName, String lastName, String username, String phone, String email,
+
+
+    public UserDB(Long id, String firstName, String lastName, String username, String phone, String email,
             String password,
             String role, LocalDate joinDate) {
         this.id = id;
@@ -32,7 +45,7 @@ public class User {
         this.joinDate = joinDate;
     }
 
-    public User(String firstName, String lastName, String username, String phone, String email, String password,
+    public UserDB(String firstName, String lastName, String username, String phone, String email, String password,
             String role, LocalDate joinDate) {
         this.firstName = firstName;
         this.lastName = lastName;
