@@ -1,0 +1,14 @@
+###
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "12e3",
+    "password": "123",
+    "phone": "123",
+    "username": "123",
+    "role": "ADMIN",
+    "joinDate": "2020-01-01"
+}
