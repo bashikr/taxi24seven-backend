@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableAutoConfiguration
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
-@ComponentScan(basePackages = { "com.Taxi24Seven.controllers", "com.Taxi24Seven.services" })
+@ComponentScan(basePackages = { "com.Taxi24Seven.controllers", "com.Taxi24Seven.services", "com.Taxi24Seven.configuration" })
 @EnableJpaRepositories(basePackages = { "com.Taxi24Seven.repositories" })
 public class Taxi24SevenApplication {
 
