@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Taxi24Seven.model.User;
-import com.Taxi24Seven.repository.UserRepository;
+import com.Taxi24Seven.DB.UserDB;
+import com.Taxi24Seven.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -19,12 +19,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<User> getUsers() {
+    public List<UserDB> getUsers() {
         return userRepository.findAll();
     }
 
-    public void addNewUser(User userDB) {
-        Optional<User> userOptional = userRepository.findByEmail(userDB.getEmail());
+    public void addNewUser(UserDB userDB) {
+        Optional<UserDB> userOptional = userRepository.findByEmail(userDB.getEmail());
 
         if (userOptional.isPresent()) {
             throw new IllegalStateException("User already exists");

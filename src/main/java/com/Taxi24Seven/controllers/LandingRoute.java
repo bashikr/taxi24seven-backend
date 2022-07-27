@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LandingRoute {
+
     @RequestMapping("/")
     public String helloSpring() {
-        return "Hello there!";
+        return "Hello Spring";
     }
 }
