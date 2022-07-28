@@ -4,13 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import com.Taxi24Seven.configuration.AppProperties;
 
 @EnableAutoConfiguration
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
-@ComponentScan(basePackages = { "com.Taxi24Seven.controllers", "com.Taxi24Seven.services", "com.Taxi24Seven.configuration" })
-@EnableJpaRepositories(basePackages = { "com.Taxi24Seven.repositories" })
+@EnableConfigurationProperties(AppProperties.class)
 public class Taxi24SevenApplication {
 
     public static void main(String[] args) {
